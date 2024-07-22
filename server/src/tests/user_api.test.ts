@@ -23,7 +23,6 @@ describe("User api", () => {
   test("unique identifier 'id' is defined", async () => {
     const response = await api.get("/api/users");
 
-    // Cast to any to access all fields
     response.body.forEach((user: UserUnion) => {
       assert.notStrictEqual(user.id, undefined);
 
